@@ -22,7 +22,7 @@ app.get('/scrape', async (req, res) => {
 
         const page = await browser.newPage();
 
-        const loginUrl = 'https://papa.hr.crew-admin.papa-service.com/login?callbackUrl=https%3A%2F%2Fpapa.hr.crew-admin.papa-service.com%2F';
+        const loginUrl = '';
 
         await page.goto(loginUrl);
 
@@ -41,7 +41,7 @@ app.get('/scrape', async (req, res) => {
 
         if (sessionTokenCookie) {
             // 엔드포인트 호출
-            const endpointUrl = 'https://papa.hr.crew-admin.papa-service.com/api/employees/vacation-list?wfId=';
+            const endpointUrl = '';
             await page.goto(endpointUrl);
 
             // 여기서 response를 처리하거나 결과를 콘솔에 출력할 수 있음
@@ -55,7 +55,7 @@ app.get('/scrape', async (req, res) => {
 
             // firstItemId를 기준으로 반복
             for (let i = 1; i <= firstItemId; i++) {
-                const dynamicUrl = `https://papa.hr.crew-admin.papa-service.com/api/employees/vacation-list?wfId=${i}`;
+                const dynamicUrl = `${i}`;
 
                 await page.goto(dynamicUrl);
 
