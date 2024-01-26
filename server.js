@@ -27,8 +27,8 @@ app.get('/scrape', async (req, res) => {
         await page.goto(loginUrl);
 
         // 아이디와 비밀번호 입력
-        await page.type('#mui-2', 'papa003@papamobility.com');
-        await page.type('#mui-3', 'papa1234!');
+        await page.type('#mui-2', '');
+        await page.type('#mui-3', '');
 
         // 로그인 버튼 클릭
         await page.click('.MuiButton-contained.MuiButton-containedPrimary');
